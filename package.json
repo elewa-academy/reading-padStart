@@ -1,0 +1,15 @@
+{
+  "name": "reading-lodash-starter",
+  "version": "1.0.0",
+  "description": "starter repo for reading-lodash",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "colevandersWands",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "tressa": "^0.3.1"
+  }
+}

@@ -1,0 +1,23 @@
+module.exports = [
+	{input: ['abc', 6, undefined], expected: '   abc', message: "'abc', 6, null -> '   abc'"},
+	{input: ['abc', 6, '_-'], expected: "_-_abc", message: "'abc', 6, '_-' -> '_-_abc"},
+	{input: ['abc', 3, undefined], expected: "abc", message: "'abc', 3, null -> 'abc'"},
+	{input: ['a\bc', 6, undefined], expected: "   a\bc", message: "'a\bc', 6, null -> '   a\bc'"},
+	{input: ['abc', 6, '\n'], expected: "\n\n\nabc", message: "'abc', 6, '\n' -> '\n\n\nabc'"},
+	{input: ['a\bc', 6, '\n'], expected: "\n\n\na\bc", message: "'a\bc', 6, '\n' -> '\n\n\na\bc'"},
+	{input: ['', 6, ':'], expected: "::::::", message: "'', 6, ':' -> '::::::'"},
+	{input: [11, 6, ':'], expected: "::::11", message: "11, 6, ':' -> '::::11'"},
+	{input: [01, 6, ':'], expected: ":::::1", message: "01, 6, ':' -> ':::::1'"},
+	// {input: [NaN, 6, " "], expected: "   NaN", message: "NaN, 6, " " -> '   NaN'"},
+	{input: [NaN, 6, " "], expected: "   NaN", message: "NaN, 6, ' ' -> '   NaN'"},
+	{input: [" ", 6, NaN], expected: "NaNNa ", message: "' ', 6, NaN -> 'NaNNa '"},
+	{input: [NaN, 6, NaN], expected: "NaNNaN", message: "NaN, 6, NaN -> 'NaNNaN'"},
+	{input: ["abc", 0, " "], expected: "abc", message: "'abc', 0, ' ' -> 'abc'"},
+	{input: ["abc", -1, " "], expected: "abc", message: "'abc', -1, ' ' -> 'abc'"},
+	{input: ["abc", 4.9, " "], expected: " abc", message: "'abc', 4.9, ' ' -> ' abc'"},
+	{input: ["abc", -7, " "], expected: "abc", message: "'abc', -7, ' ' -> 'abc'"},
+	{input: ["abc", Math.sqrt(16), " "], expected: " abc", message: "'abc', Math.sqrt(16), ' ' -> ' abc'"},
+	{input: ["abc", NaN, " "], expected: "abc", message: "'abc', NaN, ' ' -> 'abc'"},
+	{input: ["abc", "6", " "], expected: "   abc", message: "'abc', '6', ' ' -> '   abc'"},
+	{input: ["abc", Infinity, " "], expected: "abc", message: "'abc', Infinity, ' ' -> 'abc'"}
+];
