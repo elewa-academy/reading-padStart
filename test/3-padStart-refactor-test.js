@@ -1,12 +1,12 @@
-let assert = require('tressa');
-let cases = require('./test-cases');
+const assert = require('tressa');
 
-let ____refactor = require("./2-___-refactor.js");
+const cases = require('./test-cases.js');
 
-assert.title('___-refacotr');
+const padStart_refactor = require("../3-padStart-refactor.js");
+
+assert.title('padStart');
+
 
 for (let cond of cases) {
-	assert(____refactor(cond.args...) === cond.expected, cond.message);
+	assert(padStart_refactor(...cond.input) === cond.expected, cond.message);
 };
-
-
