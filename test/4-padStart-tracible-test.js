@@ -1,13 +1,12 @@
-let assert = require('tressa');
-let cases = require('./test-cases');
+const assert = require('tressa');
 
-let ____tracible = require("./4-___-tracible.js");
+const cases = require('./test-cases.js');
 
-assert.title('____tracible');
+const padStart_tracible = require("../4-padStart-tracible.js");
+
+assert.title('padStart');
+
 
 for (let cond of cases) {
-	assert(____tracible(cond.args...) === cond.expected, 
-		[cond.message, ____tracible(cond.args..., true)]);
+	assert(padStart_tracible(...cond.input).result === cond.expected, cond.message);
 };
-
-
