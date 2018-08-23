@@ -1,6 +1,6 @@
 
 let padded_string;
-{ // padStart(a, b, c)
+{ // = padStart(a, b, c)
 	let args = {
 		string: undefined,
 		length: undefined,
