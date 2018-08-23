@@ -7,7 +7,7 @@ let padded_string;
 		chars: undefined
 	};
 	let dep = {
-		createPadding: {
+		_createPadding: {
 			args: {
 				number: "The padding length"
 				string: "The string used as padding"
@@ -17,7 +17,7 @@ let padded_string;
 			} 
 			behavior: "Creates the padding for `string` based on `length`. The `chars` string is truncated if the number of characters exceeds `length`."
 		},
-		stringSize: {
+		_stringSize: {
 			args: {
 				string: "The string to inspect.",
 			},
