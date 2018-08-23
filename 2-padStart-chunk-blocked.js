@@ -86,7 +86,7 @@ let padded_string;
 
 		if (needs_padding) {
 			let pad_length = args.length - strLength;
-			ret_val = pad(pad_length, args.string, args.chars);
+			ret_val = closure.pad(pad_length, args.string, args.chars);
 		} else { 
 			ret_val = args.string;
 		};
