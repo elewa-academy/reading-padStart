@@ -93,5 +93,6 @@ let padded_string;
 
 		break padStart;
 	};
+	padded_string = ret_val;
 
 } 
