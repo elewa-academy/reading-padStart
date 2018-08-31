@@ -1,6 +1,6 @@
 
 let padded_string;
-{ // padStart(a, b, c)
+{ // = padStart(a, b, c)
 	let args = {
 		string: undefined,
 		length: undefined,
@@ -86,12 +86,13 @@ let padded_string;
 
 		if (needs_padding) {
 			let pad_length = args.length - strLength;
-			ret_val = pad(pad_length, args.string, args.chars);
+			ret_val = closure.pad(pad_length, args.string, args.chars);
 		} else { 
 			ret_val = args.string;
 		};
 
 		break padStart;
 	};
+	padded_string = ret_val;
 
 } 
