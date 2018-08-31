@@ -1,12 +1,18 @@
+var createPadding = require('./node_modules/lodash/_createPadding'),
+    stringSize = require('./node_modules/lodash/_stringSize'),
+    toInteger = require('./node_modules/lodash/toInteger'),
+    toString = require('./node_modules/lodash/toString');
+
 let padded_string;
-{ // padStart(a, b, c)
+{ // = padStart(a, b, c)
 	let args = {
 		string: undefined,
 		length: undefined,
 		chars: undefined
 	};
 	let dep = {
-		_createPadding: {
+		createPadding,
+		_createPadding_specs: {
 			args: {
 				number: "The padding length"
 				string: "The string used as padding"
@@ -16,7 +22,8 @@ let padded_string;
 			} 
 			behavior: "Creates the padding for `string` based on `length`. The `chars` string is truncated if the number of characters exceeds `length`."
 		},
-		_stringSize: {
+		stringSize,
+		_stringSize_specs: {
 			args: {
 				string: "The string to inspect.",
 			},
@@ -25,7 +32,8 @@ let padded_string;
 			},
 			behavior: "Gets the number of symbols in `string`."
 		},
-		toInteger: {
+		toInteger,
+		toInteger_specs: {
 			args: {
 				anything: "the value to convert"
 			},
@@ -34,7 +42,8 @@ let padded_string;
 			},
 			behavior: "Converts `value` to an integer."
 		},
-		toString: {
+		toString,
+		toString_specs: {
 			args: {
 				anything: "the value to convert"
 			},
