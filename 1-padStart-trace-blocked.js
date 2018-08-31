@@ -1,59 +1,60 @@
-var createPadding = require('./node_modules/lodash/_createPadding'),
-    stringSize = require('./node_modules/lodash/_stringSize'),
-    toInteger = require('./node_modules/lodash/toInteger'),
-    toString = require('./node_modules/lodash/toString');
+const dep = {
+	createPadding: require('./node_modules/lodash/_createPadding'),
+	_createPadding_specs: {
+		args: {
+			number: "The padding length",
+			string: "The string used as padding",
+		},
+		returns: {
+			string: "the padding for `string`"
+		}, 
+		behavior: "Creates the padding for `string` based on `length`. The `chars` string is truncated if the number of characters exceeds `length`."
+	},
 
-let padded_string;
-{ // = padStart(a, b, c)
-	let args = {
-		string: undefined,
-		length: undefined,
-		chars: undefined
-	};
-	let dep = {
-		createPadding,
-		_createPadding_specs: {
-			args: {
-				number: "The padding length"
-				string: "The string used as padding"
-			},
-			returns: {
-				string: "the padding for `string`"
-			} 
-			behavior: "Creates the padding for `string` based on `length`. The `chars` string is truncated if the number of characters exceeds `length`."
+	stringSize: stringSize = require('./node_modules/lodash/_stringSize'),
+	_stringSize_specs: {
+		args: {
+			string: "The string to inspect.",
 		},
-		stringSize,
-		_stringSize_specs: {
-			args: {
-				string: "The string to inspect.",
-			},
-			returns: {
-				number: "the string size"
-			},
-			behavior: "Gets the number of symbols in `string`."
+		returns: {
+			number: "the string size",
 		},
-		toInteger,
-		toInteger_specs: {
-			args: {
-				anything: "the value to convert"
-			},
-			returns: {
-				number: "the converted integer"
-			},
-			behavior: "Converts `value` to an integer."
+		behavior: "Gets the number of symbols in `string`."
+	},
+
+	toInteger: toInteger = require('./node_modules/lodash/toInteger'),
+	toInteger_specs: {
+		args: {
+			anything: "the value to convert",
 		},
-		toString,
-		toString_specs: {
-			args: {
-				anything: "the value to convert"
-			},
-			returns: {
-				string: "the converted string"
-			},
-			behavior: "Converts `value` to a string. An empty string is returned for `null` and `undefined` values. The sign of `-0` is preserved."
-		}
+		returns: {
+			number: "the converted integer"
+		},
+		behavior: "Converts `value` to an integer."
+	},
+
+	toString: toString = require('./node_modules/lodash/toString'),
+	toString_specs: {
+		args: {
+			anything: "the value to convert"
+		},
+		returns: {
+			string: "the converted string"
+		},
+		behavior: "Converts `value` to a string. An empty string is returned for `null` and `undefined` values. The sign of `-0` is preserved."
 	}
+}
 
+const args = {
+	string: "abc",
+	length: 6,
+	chars: undefined
+};
+
+const expected = "  abc";
+
+let padded_string; 
+{ // = padStart(a, b, c)
 	let ret_val;
 	padStart_frame: {
 		args.string = dep.toString(args.string);
@@ -81,10 +82,13 @@ let padded_string;
 			ret_val = args.string;
 		};
 
-		break padStart;
+		break padStart_frame;
 	};
+	padded_string = ret_val;
+};
 
-} 
+const util = require('util')
+console.assert(expected === padded_string, "fail: " + util.inspect(args) + " -> " + padded_string);
 
 
 
