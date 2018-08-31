@@ -55,7 +55,7 @@ let padded_string;
 	}
 
 	let ret_val;
-	padStart: {
+	padStart_frame: {
 		args.string = dep.toString(args.string);
 		args.length = dep.toInteger(args.length);
 
