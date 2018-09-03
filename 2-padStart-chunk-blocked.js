@@ -86,7 +86,7 @@ const expected = "  abc";
 let padded_string;
 { // = padStart(a, b, c)
 	let ret_val;
-	padStart: {
+	padStart_frame: {
 		let safe_args = closure.cast_args(args.string, args.length);
 		args.string = safe_args.string;
 		args.length = safe_args.number;
@@ -102,7 +102,7 @@ let padded_string;
 			ret_val = args.string;
 		};
 
-		break padStart;
+		break padStart_frame;
 	};
 	padded_string = ret_val;
 }; 
