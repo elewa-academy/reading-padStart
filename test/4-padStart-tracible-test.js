@@ -8,5 +8,6 @@ assert.title('padStart');
 
 
 for (let cond of cases) {
-	assert(padStart_tracible(...cond.input) === cond.expected, cond.message);
+	let actual = padStart_tracible(...cond.input)
+	assert(actual === cond.expected, {padStart_tracible(...cond.input, true), expected: cond.expected});
 };
