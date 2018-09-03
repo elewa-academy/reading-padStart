@@ -88,8 +88,8 @@ let padded_string;
 	let ret_val;
 	padStart: {
 		let safe_args = closure.cast_args(args.string, args.length);
-		string = safe_args.string;
-		length = safe_args.number;
+		args.string = safe_args.string;
+		args.length = safe_args.number;
 
 		var strLength = closure.find_length(args.string, args.length); 
 
