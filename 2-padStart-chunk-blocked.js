@@ -70,7 +70,8 @@ const closure = {
 	pad: function (pad_length, string, chars) {
 		let result;
 		const step_1 = dep.createPadding(pad_length, chars);
-		return step_1 + string;
+		result = step_1 + string;
+		return result
 	} 
 }
 
