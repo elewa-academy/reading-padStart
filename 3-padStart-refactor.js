@@ -91,7 +91,8 @@ let pad_check_test_cases = [
 function pad(pad_length, string, chars) {
 	let result;
 	const step_1 = createPadding(pad_length, chars);
-	return step_1 + string;
+	result = step_1 + string;
+	return result;
 };
 let pad_test_cases = [
 	{input: [4, "rolf", "+="], expected: "+=+=rolf", message: "[4, 'rolf', '+='] -> '+=+=rolf'"}
