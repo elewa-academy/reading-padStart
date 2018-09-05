@@ -11,7 +11,7 @@ const dep = {
 		behavior: "Creates the padding for `string` based on `length`. The `chars` string is truncated if the number of characters exceeds `length`."
 	},
 
-	stringSize: stringSize = require('./node_modules/lodash/_stringSize'),
+	stringSize: require('./node_modules/lodash/_stringSize'),
 	_stringSize_specs: {
 		args: {
 			string: "The string to inspect.",
@@ -22,7 +22,7 @@ const dep = {
 		behavior: "Gets the number of symbols in `string`."
 	},
 
-	toInteger: toInteger = require('./node_modules/lodash/toInteger'),
+	toInteger: require('./node_modules/lodash/toInteger'),
 	toInteger_specs: {
 		args: {
 			anything: "the value to convert",
@@ -33,7 +33,7 @@ const dep = {
 		behavior: "Converts `value` to an integer."
 	},
 
-	toString: toString = require('./node_modules/lodash/toString'),
+	toString: require('./node_modules/lodash/toString'),
 	toString_specs: {
 		args: {
 			anything: "the value to convert"
@@ -78,11 +78,12 @@ let padded_string;
 			const step_1 = args.length - strLength;
 			const step_2 = dep.createPadding(step_1, args.chars);
 			ret_val = step_2 + args.string;
+			break padStart_frame;
 		} else { 
 			ret_val = args.string;
+			break padStart_frame;
 		};
 
-		break padStart_frame;
 	};
 	padded_string = ret_val;
 };

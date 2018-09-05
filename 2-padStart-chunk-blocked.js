@@ -98,11 +98,12 @@ let padded_string;
 		if (needs_padding) {
 			let pad_length = args.length - strLength;
 			ret_val = closure.pad(pad_length, args.string, args.chars);
+			break padStart_frame;
 		} else { 
 			ret_val = args.string;
+			break padStart_frame;
 		};
 
-		break padStart_frame;
 	};
 	padded_string = ret_val;
 }; 
